@@ -8,7 +8,8 @@
   },
   "scripts": {
     "prettier:check": "node bin/prettier-eslint_d --list-different 'bin/*'",
-    "prettier:fix": "node bin/prettier-eslint_d --write 'bin/*'"
+    "prettier:fix": "node bin/prettier-eslint_d --write 'bin/*'",
+    "test": "bash test.sh"
   },
   "devDependencies": {
     "babel-eslint": "8",
