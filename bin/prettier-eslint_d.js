@@ -9,13 +9,13 @@ const join = require('path').resolve
  * These are discarded
  */
 
-const UNSUPPORTED = {
+const UNSUPPORTED_OPTIONS = {
   boolean: ['no-bracket-spacing', 'jsx-bracket-same-line', 'use-tabs'],
   string: ['arrow-parens', 'single-quote', 'config-precedence']
 }
 
 /**
- * Options for rminimist
+ * Command-line options to be passed onto prettier
  */
 
 const PRETTIER_OPTIONS = {
@@ -57,6 +57,15 @@ const PRETTIER_OPTIONS = {
 }
 
 /**
+ * Command line flags to be passed onto eslint
+ */
+
+const ESLINT_OPTIONS = {
+  string: ['eslint-config-path', 'rulesdir', 'stdin-filename'],
+  boolean: ['no-eslintrc']
+}
+
+/**
  * Runs.
  */
 
@@ -70,12 +79,17 @@ function run () /*: Promise<void> */ {
   } else if (flags.stdin) {
     return spawnPiped({
       prettierArgs: dargs(flags),
-      eslintArgs: ['--stdin', '--fix-to-stdout']
+      eslintArgs: ['--stdin', '--fix-to-stdout', ...getEslintArgs(argv)]
     })
   } else {
     require('.bin/prettier-eslint')
     return Promise.resolve()
   }
+}
+
+function getEslintArgs (argv /*: Array<string> */) /*: Array<string> */ {
+  const flags = rminimist(argv, ESLINT_OPTIONS)
+  return dargs(flags)
 }
 
 /**
@@ -146,4 +160,15 @@ if (!module.parent) {
     console.error(err.stack)
     process.exit(err.code)
   })
+}
+
+module.exports = {
+  UNSUPPORTED_OPTIONS,
+  PRETTIER_OPTIONS,
+  ESLINT_OPTIONS,
+  run,
+  spawnPiped,
+  getEslintPath,
+  getPrettierPath,
+  getPrettierEslintPath
 }
