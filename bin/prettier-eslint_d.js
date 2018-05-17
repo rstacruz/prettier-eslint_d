@@ -59,7 +59,7 @@ const OPTIONS = {
  * Runs.
  */
 
-function run() /*: Promise<void> */ {
+function run () /*: Promise<void> */ {
   const argv /*: Array<string> */ = process.argv.slice(2)
   const flags /*: Flags */ = rminimist(argv, OPTIONS)
 
@@ -98,10 +98,7 @@ function spawnPiped ({ prettierArgs, eslintArgs }) /*: Promise<void> */ {
       getPrettierPath(),
       ...prettierArgs
     ]
-    const eslintCmd /*: Array<string> */ = [
-      getEslintPath(),
-      ...eslintArgs
-    ]
+    const eslintCmd /*: Array<string> */ = [getEslintPath(), ...eslintArgs]
 
     const prettier /*: Process */ = spawn(nodePath, prettierCmd, {
       stdio: [process.stdin, 'pipe', process.stderr]
@@ -131,15 +128,15 @@ function spawnPiped ({ prettierArgs, eslintArgs }) /*: Promise<void> */ {
   })
 }
 
-function getEslintPath() /*: string */ {
+function getEslintPath () /*: string */ {
   return require.resolve('.bin/eslint_d')
 }
 
-function getPrettierPath() /*: string */ {
+function getPrettierPath () /*: string */ {
   return require.resolve('.bin/prettier_d')
 }
 
-function getPrettierEslintPath() /*: string */ {
+function getPrettierEslintPath () /*: string */ {
   return require.resolve('.bin/prettier_d')
 }
 

@@ -6,6 +6,10 @@
   "bin": {
     "prettier-eslint_d": "bin/prettier-eslint_d.js"
   },
+  "scripts": {
+    "prettier:check": "node bin/prettier-eslint_d --list-different 'bin/*'",
+    "prettier:fix": "node bin/prettier-eslint_d --write 'bin/*'"
+  },
   "devDependencies": {
     "babel-eslint": "8",
     "eslint": "4",
