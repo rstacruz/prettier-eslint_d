@@ -9,6 +9,7 @@
   "devDependencies": {},
   "dependencies": {
     "dargs": "^5.1.0",
+    "debug": "^3.1.0",
     "eslint_d": "^5.3.1",
     "prettier_d": "^5.7.4",
     "rminimist": "^1.0.1"
