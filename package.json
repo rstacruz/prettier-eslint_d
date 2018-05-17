@@ -1,15 +1,21 @@
 {
   "name": "prettier-eslint_d",
+  "description": "Format your JavaScript files with prettier and eslint, fast",
   "version": "0.0.1",
-  "main": "index.js",
-  "license": "MIT",
+  "author": "Rico Sta. Cruz <rstacruz@users.noreply.github.com>",
   "bin": {
     "prettier-eslint_d": "bin/prettier-eslint_d.js"
   },
-  "scripts": {
-    "prettier:check": "node bin/prettier-eslint_d --list-different 'bin/*'",
-    "prettier:fix": "node bin/prettier-eslint_d --write 'bin/*'",
-    "test": "bash test.sh"
+  "bugs": {
+    "url": "https://github.com/rstacruz/prettier-eslint_d/issues"
+  },
+  "dependencies": {
+    "dargs": "^5.1.0",
+    "debug": "^3.1.0",
+    "eslint_d": "^5.3.1",
+    "prettier-eslint-cli": "^4.7.1",
+    "prettier_d": "^5.7.4",
+    "rminimist": "^1.0.1"
   },
   "devDependencies": {
     "babel-eslint": "8",
@@ -23,12 +29,25 @@
     "eslint-plugin-react": "7",
     "eslint-plugin-standard": "3"
   },
-  "dependencies": {
-    "dargs": "^5.1.0",
-    "debug": "^3.1.0",
-    "eslint_d": "^5.3.1",
-    "prettier-eslint-cli": "^4.7.1",
-    "prettier_d": "^5.7.4",
-    "rminimist": "^1.0.1"
+  "homepage": "https://github.com/rstacruz/prettier-eslint_d#readme",
+  "keywords": [
+    "beautify",
+    "cli",
+    "eslint",
+    "formatter",
+    "lint",
+    "prettier",
+    "prettify"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rstacruz/prettier-eslint_d.git"
+  },
+  "scripts": {
+    "prettier:check": "node bin/prettier-eslint_d --list-different 'bin/*'",
+    "prettier:fix": "node bin/prettier-eslint_d --write 'bin/*'",
+    "test": "bash test.sh"
   }
 }
