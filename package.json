@@ -1,16 +1,28 @@
 {
   "name": "prettier-eslint_d",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "main": "index.js",
   "license": "MIT",
   "bin": {
     "prettier-eslint_d": "bin/prettier-eslint_d.js"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "babel-eslint": "8",
+    "eslint": "4",
+    "eslint-config-standard": "11",
+    "eslint-config-standard-react": "5",
+    "eslint-plugin-flowtype": "2",
+    "eslint-plugin-import": "2",
+    "eslint-plugin-node": "5",
+    "eslint-plugin-promise": "3",
+    "eslint-plugin-react": "7",
+    "eslint-plugin-standard": "3"
+  },
   "dependencies": {
     "dargs": "^5.1.0",
     "debug": "^3.1.0",
     "eslint_d": "^5.3.1",
+    "prettier-eslint-cli": "^4.7.1",
     "prettier_d": "^5.7.4",
     "rminimist": "^1.0.1"
   }
