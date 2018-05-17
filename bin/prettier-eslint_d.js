@@ -18,7 +18,7 @@ const UNSUPPORTED = {
  * Options for rminimist
  */
 
-const OPTIONS = {
+const PRETTIER_OPTIONS = {
   boolean: [
     'fallback',
     'json',
@@ -62,7 +62,7 @@ const OPTIONS = {
 
 function run () /*: Promise<void> */ {
   const argv /*: Array<string> */ = process.argv.slice(2)
-  const flags /*: Flags */ = rminimist(argv, OPTIONS)
+  const flags /*: Flags */ = rminimist(argv, PRETTIER_OPTIONS)
 
   if (flags.version) {
     console.log(require('../package.json').version)
@@ -106,11 +106,7 @@ function spawnPiped ({ prettierArgs, eslintArgs }) /*: Promise<void> */ {
     })
 
     const eslint /*: Process */ = spawn(nodePath, eslintCmd, {
-      stdio: [prettier.stdout, 'pipe', process.stderr]
-    })
-
-    eslint.stdout.on('data', (data /*: Buffer */) => {
-      process.stdout.write(data)
+      stdio: [prettier.stdout, process.stdout, process.stderr]
     })
 
     prettier.on('close', (code /*: ?number */, signal /*: string */) => {
@@ -122,7 +118,7 @@ function spawnPiped ({ prettierArgs, eslintArgs }) /*: Promise<void> */ {
     eslint.on('close', (code /*: ?number */, signal /*: string */) => {
       debug('run(): eslint died', { code, signal })
       if (code !== 0) {
-        process.exit(code)
+        process.exit(code || 1)
         resolve()
       }
     })

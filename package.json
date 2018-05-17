@@ -48,6 +48,7 @@
   "scripts": {
     "prettier:check": "node bin/prettier-eslint_d --list-different 'bin/*'",
     "prettier:fix": "node bin/prettier-eslint_d --write 'bin/*'",
-    "test": "bash test.sh"
+    "test": "env DEBUG='prettier-eslint*' bash test.sh",
+    "test:multiple": "for f in {1..10}; do env DEBUG='prettier-eslint*' bash test.sh; done"
   }
 }
