@@ -6,6 +6,8 @@
 
 prettier-eslint_d allows you to use [Prettier](https://prettier.io) and [Eslint](https://eslint.org) together, and use them fast. It spawns them as daemons, so any subsequent calls will be as fast as possible. Great for integrating into editors like Emacs and Vim!
 
+:warning: **EXPERIMENTAL** - Use at your own risk.
+
 ## Installation
 
 First, add an Eslint config to your project. prettier-eslint_d assumes you have an `.eslintrc` or `.eslintrc.json` in your project.
@@ -59,6 +61,11 @@ This project integrates the following other projects:
 - [prettier_d](https://yarn.pm/prettier_d)
 - [prettier-eslint](https://yarn.pm/prettier-eslint)
 - [prettier-eslint-cli](https://yarn.pm/prettier-eslint-cli)
+
+Related discussions:
+
+- <https://github.com/josephfrazier/prettier_d/issues/2>
+- <https://github.com/josephfrazier/prettier_d/pull/3>
 
 ## Thanks
 
