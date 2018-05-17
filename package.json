@@ -1,7 +1,7 @@
 {
   "name": "prettier-eslint_d",
   "description": "Format your JavaScript files with prettier and eslint, fast",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "author": "Rico Sta. Cruz <rstacruz@users.noreply.github.com>",
   "bin": {
     "prettier-eslint_d": "bin/prettier-eslint_d.js"
