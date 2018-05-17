@@ -8,6 +8,8 @@ prettier-eslint_d allows you to use [Prettier](https://prettier.io) and [Eslint]
 
 ## Installation
 
+First, add an Eslint config to your project. prettier-eslint_d assumes you have an `.eslintrc` or `.eslintrc.json` in your project.
+
 Install it via yarn or npm:
 
 ```bash
@@ -28,6 +30,22 @@ cat path/to/script.js | ./node_modules/.bni/prettier-eslint_d --stdin
 ```
 
 For more options, see `node_modules/.bin/prettier-eslint_d --help`.
+
+## Adding scripts
+
+Your setup may vary, but I recommend having `check` and `fix` commands in a project. You can add these to your `package.json`:
+
+```js
+/* package.json */
+{
+  "scripts": {
+    "prettier:check": "prettier-eslint --list-different 'src/**/*.js'",
+    "prettier:fix": "prettier-eslint --write 'src/**/*.js'"
+  }
+}
+```
+
+Add `yarn run prettier:check` in your CI script to ensure that files checked in are formatted properly. You can run `yarn run prettier:fix` to fix up all files.
 
 ## Spacemacs installation
 
