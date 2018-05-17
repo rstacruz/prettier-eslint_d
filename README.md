@@ -2,6 +2,8 @@
 
 > Format your JavaScript files with prettier and eslint, fast
 
+[![Status](https://travis-ci.org/rstacruz/prettier-eslint_d.svg?branch=master)](https://travis-ci.org/rstacruz/prettier-eslint_d "See test builds")
+
 prettier-eslint_d allows you to use [Prettier](https://prettier.io) and [Eslint](https://eslint.org) together, and use them fast. It spawns them as daemons, so any subsequent calls will be as fast as possible. Great for integrating into editors like Emacs and Vim!
 
 ## Installation
@@ -53,4 +55,4 @@ Authored and maintained by Rico Sta. Cruz with help from contributors ([list][co
 [![](https://img.shields.io/twitter/follow/rstacruz.svg?style=social&label=@rstacruz)](https://twitter.com/rstacruz)
 
 [MIT]: http://mit-license.org/
-[contributors]: http://github.com/rstacruz/prettier-eslint_d/contributors
+[contributors]: https://github.com/rstacruz/prettier-eslint_d/contributors
