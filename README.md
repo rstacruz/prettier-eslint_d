@@ -18,8 +18,12 @@ See: <https://gist.github.com/rstacruz/a2361d000a88e49472c4419116edaccf>
 
 ## Also see
 
+This project integrates the following other projects:
+
 - [eslint_d](https://yarn.pm/eslint_d)
 - [prettier_d](https://yarn.pm/prettier_d)
+- [prettier-eslint](https://yarn.pm/prettier-eslint)
+- [prettier-eslint-cli](https://yarn.pm/prettier-eslint-cli)
 
 ## Thanks
 
