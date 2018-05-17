@@ -1,16 +1,31 @@
 # prettier-eslint_d
 
-> [Prettier](https://prettier.io) and [Eslint](https://eslint.org), but faster
+> Format your JavaScript files with prettier and eslint, fast
+
+prettier-eslint_d allows you to use [Prettier](https://prettier.io) and [Eslint](https://eslint.org) together, and use them fast. It spawns them as daemons, so any subsequent calls will be as fast as possible. Great for integrating into editors like Emacs and Vim!
 
 ## Installation
+
+Install it via yarn or npm:
 
 ```bash
 yarn add --dev prettier-eslint_d
 ```
 
+You can then use `prettier-eslint_d` in the same way you may be using prettier:
+
 ```bash
-./prettier-eslint_d --help
+# Fix one file
+yarn run prettier-eslint_d --write path/to/file.js
+
+# Fix many files
+yarn run prettier-eslint_d --write 'scripts/**/*.js'
+
+# Fix via stdin/stdout (great for editors)
+cat path/to/script.js | ./node_modules/.bni/prettier-eslint_d --stdin
 ```
+
+For more options, see `node_modules/.bin/prettier-eslint_d --help`.
 
 ## Spacemacs installation
 
