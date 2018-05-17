@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 const rminimist = require('rminimist')
 const dargs = require('dargs')
 const spawn = require('child_process').spawn
